@@ -1,24 +1,30 @@
-# LangManus
+# 🦜🤖 LangManus
 
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![WeChat](https://img.shields.io/badge/WeChat-Langmanus-brightgreen?logo=wechat&logoColor=white)](./assets/wechat_community.jpg)
 [![Discord Follow](https://dcbadge.vercel.app/api/server/m3MszDcn?style=flat)](https://discord.gg/m3MszDcn)
 
-[English](./README.md) | [简体中文](./README_zh.md)
+[English](./README.md) | [简体中文](./README_zh.md) | [日本語](./README_ja.md)
 
 > Come From Open Source, Back to Open Source
 
 LangManus is a community-driven AI automation framework that builds upon the incredible work of the open source community. Our goal is to combine language models with specialized tools for tasks like web search, crawling, and Python code execution, while giving back to the community that made this possible.
 
-## Demo Video
+## Demo
 
-> **Task**: Calculate the influence index of DeepSeek R1 on HuggingFace. This index can be designed by considering a weighted sum of factors such as followers, downloads, and likes.
+**Task**: Calculate the influence index of DeepSeek R1 on HuggingFace. This index can be designed using a weighted sum of factors such as followers, downloads, and likes.
 
-[![Demo](./assets/demo.gif)](./assets/demo.mp4)
+**LangManus's Fully Automated Plan and Solution**:
+1. Gather the latest information about "DeepSeek R1", "HuggingFace", and related topics through online searches.
+2. Interact with a Chromium instance to visit the HuggingFace official website, search for "DeepSeek R1" and retrieve the latest data, including followers, likes, downloads, and other relevant metrics.
+3. Find formulas for calculating model influence using search engines and web scraping.
+4. Use Python to compute the influence index of DeepSeek R1 based on the collected data.
+5. Present a comprehensive report to the user.
+
+![Demo](./assets/demo.gif)
 
 - [View on YouTube](https://youtu.be/sZCHqrQBUGk)
-- [Download Video](https://github.com/langmanus/langmanus/blob/main/assets/demo.mp4)
 
 ## Table of Contents
 
@@ -28,13 +34,14 @@ LangManus is a community-driven AI automation framework that builds upon the inc
 - [Features](#features)
 - [Why LangManus?](#why-langmanus)
 - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Configuration](#configuration)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+    - [Configuration](#configuration)
 - [Usage](#usage)
 - [Docker](#docker)
 - [Web UI](#web-ui)
 - [Development](#development)
+- [FAQ](#faq)
 - [Contributing](#contributing)
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
@@ -53,7 +60,7 @@ uv sync
 uv run playwright install
 
 # Configure environment
-# Windows: copy .env.example .env 
+# Windows: copy .env.example .env
 cp .env.example .env
 # Edit .env with your API keys
 
@@ -104,30 +111,30 @@ The system consists of the following agents working together:
 ### Core Capabilities
 
 - 🤖 **LLM Integration**
-  - Support for open source models like Qwen
-  - OpenAI-compatible API interface
-  - Multi-tier LLM system for different task complexities
+    - Support for open source models like Qwen
+    - OpenAI-compatible API interface
+    - Multi-tier LLM system for different task complexities
 
 ### Tools and Integrations
 
 - 🔍 **Search and Retrieval**
-  - Web search via Tavily API
-  - Neural search with Jina
-  - Advanced content extraction
+    - Web search via Tavily API
+    - Neural search with Jina
+    - Advanced content extraction
 
 ### Development Features
 
 - 🐍 **Python Integration**
-  - Built-in Python REPL
-  - Code execution environment
-  - Package management with uv
+    - Built-in Python REPL
+    - Code execution environment
+    - Package management with uv
 
 ### Workflow Management
 
 - 📊 **Visualization and Control**
-  - Workflow graph visualization
-  - Multi-agent orchestration
-  - Task delegation and monitoring
+    - Workflow graph visualization
+    - Multi-agent orchestration
+    - Task delegation and monitoring
 
 ## Why LangManus?
 
@@ -218,13 +225,13 @@ VL_AZURE_DEPLOYMENT=gpt-4o-2024-08-06
 > **Note:**
 >
 > - The system uses different models for different types of tasks:
->   - Reasoning LLM for complex decision-making and analysis
->   - Basic LLM for simpler text-based tasks
->   - Vision-Language LLM for tasks involving image understanding
+>     - Reasoning LLM for complex decision-making and analysis
+>     - Basic LLM for simpler text-based tasks
+>     - Vision-Language LLM for tasks involving image understanding
 > - You can customize the base URLs for all LLMs independently, and you can use LiteLLM's board LLM support by following [this guide](https://docs.litellm.ai/docs/providers).
 > - Each LLM can use different API keys if needed
 > - Jina API key is optional. Provide your own key to access a higher rate limit (get your API key at [jina.ai](https://jina.ai/))
-> - Tavily search is configured to return a maximum of 5 results by default (get your API key at [app.tavily.com](https://app.tavily.com/))
+> - Tavily API key is **required**. Tavily search is configured to return a maximum of 5 results by default (get your API key at [app.tavily.com](https://app.tavily.com/))
 
 You can copy the `.env.example` file as a template to get started:
 
@@ -280,14 +287,14 @@ uv run server.py
 The API server exposes the following endpoints:
 
 - `POST /api/chat/stream`: Chat endpoint for LangGraph invoke with streaming support
-  - Request body:
+    - Request body:
   ```json
   {
     "messages": [{ "role": "user", "content": "Your query here" }],
     "debug": false
   }
   ```
-  - Returns a Server-Sent Events (SSE) stream with the agent's responses
+    - Returns a Server-Sent Events (SSE) stream with the agent's responses
 
 ### Advanced Configuration
 
@@ -309,16 +316,16 @@ LangManus uses a sophisticated prompting system in the `src/prompts` directory t
 
 - **Coder ([`src/prompts/coder.md`](src/prompts/coder.md))**: Professional software engineer role focused on Python and bash scripting. Handles:
 
-  - Python code execution and analysis
-  - Shell command execution
-  - Technical problem-solving and implementation
+    - Python code execution and analysis
+    - Shell command execution
+    - Technical problem-solving and implementation
 
 - **File Manager ([`src/prompts/file_manager.md`](src/prompts/file_manager.md))**: Handles all file system operations with a focus on properly formatting and saving content in markdown format.
 
 - **Browser ([`src/prompts/browser.md`](src/prompts/browser.md))**: Web interaction specialist that handles:
-  - Website navigation
-  - Page interaction (clicking, typing, scrolling)
-  - Content extraction from web pages
+    - Website navigation
+    - Page interaction (clicking, typing, scrolling)
+    - Content extraction from web pages
 
 #### Prompt System Architecture
 
@@ -354,6 +361,25 @@ LangManus provides a default web UI.
 
 Please refer to the [langmanus/langmanus-web-ui](https://github.com/langmanus/langmanus-web) project for more details.
 
+## Docker Compose (include both backend and frontend)
+
+LangManus provides a docker-compose setup to easily run both the backend and frontend together:
+
+```bash
+# Start both backend and frontend
+docker-compose up -d
+
+# The backend will be available at http://localhost:8000
+# The frontend will be available at http://localhost:3000, which could be accessed through web browser
+```
+
+This will:
+1. Build and start the LangManus backend container
+2. Build and start the LangManus web UI container
+3. Connect them using a shared network
+
+** Make sure you have your `.env` file prepared with the necessary API keys before starting the services. **
+
 ## Development
 
 ### Testing
@@ -381,6 +407,10 @@ make lint
 make format
 ```
 
+## FAQ
+
+Please refer to the [FAQ.md](docs/FAQ.md) for more details.
+
 ## Contributing
 
 We welcome contributions of all kinds! Whether you're fixing a typo, improving documentation, or adding a new feature, your help is appreciated. Please see our [Contributing Guide](CONTRIBUTING.md) for details on how to get started.
@@ -389,6 +419,17 @@ We welcome contributions of all kinds! Whether you're fixing a typo, improving d
 
 This project is open source and available under the [MIT License](LICENSE).
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=langmanus/langmanus&type=Date)](https://www.star-history.com/#langmanus/langmanus&Date)
+
 ## Acknowledgments
 
 Special thanks to all the open source projects and contributors that make LangManus possible. We stand on the shoulders of giants.
+
+In particular, we want to express our deep appreciation for:
+- [LangChain](https://github.com/langchain-ai/langchain) for their exceptional framework that powers our LLM interactions and chains
+- [LangGraph](https://github.com/langchain-ai/langgraph) for enabling our sophisticated multi-agent orchestration
+- [Browser-use](https://pypi.org/project/browser-use/) for control browser
+
+These amazing projects form the foundation of LangManus and demonstrate the power of open source collaboration.

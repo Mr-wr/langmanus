@@ -1,11 +1,11 @@
-# LangManus
+# 🦜🤖 LangManus
 
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![WeChat](https://img.shields.io/badge/WeChat-Langmanus-brightgreen?logo=wechat&logoColor=white)](./assets/wechat_community.jpg)
 [![Discord Follow](https://dcbadge.vercel.app/api/server/m3MszDcn?style=flat)](https://discord.gg/m3MszDcn)
 
-[English](./README.md) | [简体中文](./README_zh.md)
+[English](./README.md) | [简体中文](./README_zh.md) | [日本語](./README_ja.md)
 
 > 源于开源，回馈开源
 
@@ -13,14 +13,32 @@ LangManus 是一个社区驱动的 AI 自动化框架，它建立在开源社区
 
 ## 演示视频
 
-> **Task**: Calculate the influence index of DeepSeek R1 on HuggingFace. This index can be designed by considering a weighted sum of factors such as followers, downloads, and likes.
->
-> **任务**：计算 DeepSeek R1 在 HuggingFace 上的影响力指数。该指数可以通过考虑粉丝、下载量和点赞数等权重因素来设计。
+**Task**: Calculate the influence index of DeepSeek R1 on HuggingFace. This index can be designed by considering a weighted sum of factors such as followers, downloads, and likes.
 
-[![Demo](./assets/demo.gif)](./assets/demo.mp4)
+**LangManus的全自动计划与解决方案**:
+
+1. **收集最新信息**  
+   通过在线搜索获取关于"DeepSeek R1"、"HuggingFace"以及相关主题的最新信息。
+
+2. **访问HuggingFace官网**  
+   使用 Chromium 实例访问 HuggingFace 的官方网站，搜索"DeepSeek R1"，并检索最新数据，包括关注者数量、点赞数、下载量及其他相关指标。
+
+3. **查找模型影响力计算公式**  
+   使用搜索引擎和网页抓取技术，寻找计算模型影响力的相关公式或方法。
+
+4. **使用Python计算影响力指数**  
+   基于收集到的数据，使用Python编程计算DeepSeek R1的影响力指数。
+
+5. **生成综合报告**  
+   将分析结果整理成一份全面的报告并呈现给用户。
+
+![Demo](./assets/demo.gif)
 
 - [在 YouTube 上观看](https://youtu.be/sZCHqrQBUGk)
-- [下载视频](https://github.com/langmanus/langmanus/blob/main/assets/demo.mp4)
+- 中文自媒体报道
+    - 01Coder - Manus 开源平替 - LangManus（LangChain力荐）
+        - [YouTube](https://www.youtube.com/watch?v=XzCmPOfd0D0&lc=UgyNFuKmya8R6rVm_l94AaABAg&ab_channel=01Coder)
+        - [B站](https://www.bilibili.com/video/BV1SeXqYfEop/)
 
 ## 目录
 
@@ -30,17 +48,17 @@ LangManus 是一个社区驱动的 AI 自动化框架，它建立在开源社区
 - [功能特性](#功能特性)
 - [为什么选择 LangManus？](#为什么选择-langmanus)
 - [安装设置](#安装设置)
-  - [前置要求](#前置要求)
-  - [安装步骤](#安装步骤)
-  - [配置](#配置)
+    - [前置要求](#前置要求)
+    - [安装步骤](#安装步骤)
+    - [配置](#配置)
 - [使用方法](#使用方法)
 - [Docker](#docker)
 - [网页界面](#网页界面)
 - [开发](#开发)
+- [FAQ](#faq)
 - [贡献](#贡献)
 - [许可证](#许可证)
 - [致谢](#致谢)
-- [API 服务器](#api-服务器)
 
 ## 快速开始
 
@@ -95,30 +113,30 @@ LangManus 实现了一个分层的多智能体系统，其中有一个主管智�
 ### 核心能力
 
 - 🤖 **LLM 集成**
-  - 支持通义千问等开源模型
-  - OpenAI 兼容的 API 接口
-  - 多层 LLM 系统适配不同任务复杂度
+    - 支持通义千问等开源模型
+    - OpenAI 兼容的 API 接口
+    - 多层 LLM 系统适配不同任务复杂度
 
 ### 工具和集成
 
 - 🔍 **搜索和检索**
-  - 通过 Tavily API 进行网络搜索
-  - 使用 Jina 进行神经搜索
-  - 高级内容提取
+    - 通过 Tavily API 进行网络搜索
+    - 使用 Jina 进行神经搜索
+    - 高级内容提取
 
 ### 开发特性
 
 - 🐍 **Python 集成**
-  - 内置 Python REPL
-  - 代码执行环境
-  - 使用 uv 进行包管理
+    - 内置 Python REPL
+    - 代码执行环境
+    - 使用 uv 进行包管理
 
 ### 工作流管理
 
 - 📊 **可视化和控制**
-  - 工作流程图可视化
-  - 多智能体编排
-  - 任务分配和监控
+    - 工作流程图可视化
+    - 多智能体编排
+    - 任务分配和监控
 
 ## 为什么选择 LangManus？
 
@@ -133,6 +151,8 @@ LangManus 实现了一个分层的多智能体系统，其中有一个主管智�
 我们致力于回馈社区，欢迎各种形式的贡献——无论是代码、文档、问题报告还是功能建议。
 
 ## 安装设置
+
+> 你也可以参考 01Coder 发布的[这部影片](https://www.youtube.com/watch?v=XzCmPOfd0D0&lc=UgyNFuKmya8R6rVm_l94AaABAg&ab_channel=01Coder)
 
 ### 前置要求
 
@@ -211,9 +231,9 @@ VL_AZURE_DEPLOYMENT=gpt-4o-2024-08-06
 > **注意：**
 >
 > - 系统对不同类型的任务使用不同的模型：
->   - 推理 LLM 用于复杂的决策和分析
->   - 基础 LLM 用于简单的文本任务
->   - 视觉语言 LLM 用于涉及图像理解的任务
+>     - 推理 LLM 用于复杂的决策和分析
+>     - 基础 LLM 用于简单的文本任务
+>     - 视觉语言 LLM 用于涉及图像理解的任务
 > - 所有 LLM 的基础 URL 都可以独立自定义
 > - 每个 LLM 可以使用不同的 API 密钥
 > - Jina API 密钥是可选的，提供自己的密钥可以获得更高的速率限制（你可以在 [jina.ai](https://jina.ai/) 获该密钥）
@@ -273,14 +293,14 @@ uv run server.py
 API 服务器提供以下端点：
 
 - `POST /api/chat/stream`：用于 LangGraph 调用的聊天端点，流式响应
-  - 请求体：
+    - 请求体：
   ```json
   {
     "messages": [{ "role": "user", "content": "在此输入您的查询" }],
     "debug": false
   }
   ```
-  - 返回包含智能体响应的服务器发送事件（SSE）流
+    - 返回包含智能体响应的服务器发送事件（SSE）流
 
 ### 高级配置
 
@@ -302,16 +322,16 @@ LangManus 在 `src/prompts` 目录中使用复杂的提示系统来定义智能�
 
 - **程序员（[`src/prompts/coder.md`](src/prompts/coder.md)）**：专业软件工程师角色，专注于 Python 和 bash 脚本。处理：
 
-  - Python 代码执行和分析
-  - Shell 命令执行
-  - 技术问题解决和实现
+    - Python 代码执行和分析
+    - Shell 命令执行
+    - 技术问题解决和实现
 
 - **文件管理员（[`src/prompts/file_manager.md`](src/prompts/file_manager.md)）**：处理所有文件系统操作，重点是正确格式化和保存 markdown 格式的内容。
 
 - **浏览器（[`src/prompts/browser.md`](src/prompts/browser.md)）**：网络交互专家，处理：
-  - 网站导航
-  - 页面交互（点击、输入、滚动）
-  - 从网页提取内容
+    - 网站导航
+    - 页面交互（点击、输入、滚动）
+    - 从网页提取内容
 
 #### 提示系统架构
 
@@ -345,6 +365,25 @@ LangManus 提供一个默认的网页界面。
 
 请参考 [langmanus/langmanus-web](https://github.com/langmanus/langmanus-web) 项目了解更多信息。
 
+## Docker Compose (包括前后端)
+
+LangManus 提供了 docker-compose 设置，可以轻松地同时运行后端和前端：
+
+```bash
+# 启动后端和前端
+docker-compose up -d
+
+# 后端将在 http://localhost:8000 可用
+# 前端将在 http://localhost:3000 可用，可以通过浏览器访问
+```
+
+这将：
+1. 构建并启动 LangManus 后端容器
+2. 构建并启动 LangManus Web UI 容器
+3. 使用共享网络连接它们
+
+在启动服务之前，请确保已准备好包含必要 API 密钥的 `.env` 文件。
+
 ## 开发
 
 ### 测试
@@ -372,6 +411,10 @@ make lint
 make format
 ```
 
+## FAQ
+
+请参考 [FAQ.md](docs/FAQ_zh.md) 了解更多信息。
+
 ## 贡献
 
 我们欢迎各种形式的贡献！无论是修复错别字、改进文档，还是添加新功能，您的帮助都将备受感激。请查看我们的[贡献指南](CONTRIBUTING.md)了解如何开始。
@@ -380,6 +423,17 @@ make format
 
 本项目是开源的，基于 [MIT 许可证](LICENSE)。
 
+## Star 趋势
+
+[![Star History Chart](https://api.star-history.com/svg?repos=langmanus/langmanus&type=Date)](https://www.star-history.com/#langmanus/langmanus&Date)
+
 ## 致谢
 
 特别感谢所有让 LangManus 成为可能的开源项目和贡献者。我们站在巨人的肩膀上。
+
+我们特别要感谢以下项目：
+- [LangChain](https://github.com/langchain-ai/langchain)：为我们提供了出色的框架，支撑着我们的 LLM 交互和链式操作
+- [LangGraph](https://github.com/langchain-ai/langgraph)：为我们的复杂多智能体编排提供支持
+- [Browser-use](https://pypi.org/project/browser-use/)：提供浏览器控制能力
+
+这些优秀的项目构成了 LangManus 的基石，展现了开源协作的力量。
